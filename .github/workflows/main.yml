@@ -1,0 +1,21 @@
+name: mapsroute-slack
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Maps_Route
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+    - run: python maps_requests.py
+      env:
+        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+        GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MASP_API_KEY }}
+        ORIGIN: ${{ secrets.ORIGIN }}
+        DESTINATION: ${{ secrets.DESTINATION }}
