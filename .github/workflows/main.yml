@@ -1,7 +1,7 @@
 name: mapsroute-slack
 on:
   schedule:
-    - cron: '00 12 * * 1-5'
+    - cron: '*/3 * * * *'
 
 jobs:
   notify-slack:
