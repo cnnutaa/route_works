@@ -38,8 +38,6 @@ for route in routes['routes']:
     slack_message += f"{road} - {distance} - {duration} - {duration_in_traffic}\n"
 
 
-print(response.text)
-
 
 
 
