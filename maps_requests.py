@@ -35,7 +35,7 @@ for route in routes['routes']:
     distance = leg['distance']['text'] if "distance" in leg else ""
     duration = leg['duration']['text'] if "duration" in leg else ""
     duration_in_traffic = leg['duration_in_traffic']['text'] if "duration_in_traffic" in leg else ""
-    slack_message += f"{road} - {distance} - {duration} - {duration_in_traffic}\n"
+    slack_message += f"{road} - {origin} - {destination} - {distance} - {duration} - {duration_in_traffic}\n"
 
 
 
